@@ -4766,8 +4766,21 @@ border-top: solid 5px #000000;
 
 }
 #blockheading{
+
+padding-top: 10px;
+margin-left:15px;
+margin-right:15px;
+width:100%;
+}
+#topimgborder{
 border-top: solid 5px #000000;
 padding-top: 10px;
+}
+#blockheading1{
+
+padding-top: 10px;
+width:100%;
+
 width:100%;
 }
 #imgblock{
