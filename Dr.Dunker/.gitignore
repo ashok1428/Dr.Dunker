@@ -21,7 +21,8 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
-
+website-cms/wp-config.php
+Dr.Dunker/website-cms/wp-config.php
 # CDT-specific
 .cproject
 
