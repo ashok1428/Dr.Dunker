@@ -4,6 +4,7 @@ Template Name: Home Page
 */
 get_header();
 ?>
+
 <body>
 <!-- Requires Foundation 4 | visit http://foundation.zurb.com to download -->
 
@@ -26,14 +27,18 @@ get_header();
 <!-- End Header and Nav -->
 
 <!-- First Band (Slider) -->
+<?php  get_the_ID();
 
+$images=get_post_meta(get_the_ID(),'wpcf-home-page-main-slider');
+
+
+?>
 <div class="row">
     <div class="large-12 columns">
         <ul data-orbit>
-            <li><img src="http://placehold.it/1000x400&text=[ img 1 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 2 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 3 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 4 ]" /></li>
+            <?php foreach($images as $img): ?>
+            <li><img src="<?php echo $img; ?>" /></li>
+            <?php endforeach; ?>
         </ul>
         <!-- <div id="slider">
 
@@ -78,23 +83,41 @@ get_header();
 <!-- Three-up Content Blocks -->
 
 <div class="row">
-
-    <div class="large-4 columns" id="imgblock">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/left-block-img.png" />
+    <div class="large-4 columns">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/left-block-img.png" id="imgblock4"/>
     </div>
 
-    <div class="large-4 columns" id="imgblock">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/middle-block-img.png" />
+    <div class="large-4 columns">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/middle-block-img.png" id="imgblock5"/>
     </div>
 
-    <div class="large-4 columns" id="imgblock">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/right-block-img.png" />
-
+    <div class="large-4 columns">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/right-block-img.png" id="imgblock6"/>
     </div>
-
-    <div class="large-12 columns" >
+    <div class="large-12 columns" id="hrtag1">
         <hr />
     </div>
+
+</div>
+
+<div class="row">
+    <div class="large-4 columns">
+        <h6>This is a content section.</h6>
+        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+
+    <div class="large-4 columns">
+        <h6>This is a content section.</h6>
+        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+
+    <div class="large-4 columns">
+        <h6>This is a content section.</h6>
+        <p>Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/anfahrtsbild - Karte.png">
+    </div>
+
 </div>
 
 <!-- text2 and content2 -->
@@ -157,10 +180,10 @@ get_header();
 
 <!-- Three block Content slider -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/skin.css" />
-</div>
+
 <div class="row">
     <ul id="mycarousel" class="jcarousel-skin-tango">
-        <li><div class="large-4 columns" id="blockheading">
+        <li><div class="large-4 columns" id="block_heading">
                 <div class="large-4 columns" id="blockheading1"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
@@ -168,57 +191,57 @@ get_header();
 
             </div>
         </li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading1">
+                <div class="large-4 columns" id="blockheading2"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading2">
+                <div class="large-4 columns" id="blockheading3"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading" >
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading3" >
+                <div class="large-4 columns" id="blockheading4"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading4">
+                <div class="large-4 columns" id="blockheading5"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading5">
+                <div class="large-4 columns" id="blockheading6"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading6">
+                <div class="large-4 columns" id="blockheading7"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading">
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading7">
+                <div class="large-4 columns" id="blockheading8"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
             </div></li>
-        <li><div class="large-4 columns" id="blockheading" >
-                <div class="large-4 columns" id="blockheading1"> </div>
+        <li><div class="large-4 columns" id="block_heading8" >
+                <div class="large-4 columns" id="blockheading9"> </div>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h6>This is a content section.</h6>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
@@ -228,110 +251,4 @@ get_header();
     </ul>
     <hr />
 </div>
-
-<!-- Call to Action Panel
-<div class="row">
-    <div class="large-12 columns">
-
-      <div class="panel">
-        <h4>Get in touch!</h4>
-
-        <div class="row">
-          <div class="large-9 columns">
-            <p>We'd love to hear from you, you attractive person you.</p>
-          </div>
-          <div class="large-3 columns">
-            <a href="#" class="radius button right">Contact Us</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-
-
-
-
-<script>
-    document.write('<script src=' +
-        ('__proto__' in {} ? '<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/zepto' : '<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jquery') +
-        '.js><\/script>')
-</script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation.min.js"></script>
-<!--
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.alerts.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.clearing.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.cookie.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.dropdown.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.forms.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.joyride.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.magellan.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.orbit.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.reveal.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.section.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.tooltips.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.topbar.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.interchange.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.placeholder.js"></script>
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation/foundation.abide.js"></script>
-
-
-
--->
-
-<script>
-    $(document).foundation();
-</script>
-<footer class="row" >
-    <div class="large-12 columns" >
-        <hr />
-        <div class="large-12 columns">
-            <p>
-            <ul class="inline-list left">
-                <li><a href="#">HOME  | </a></li>
-                <li><a href="#">TEAM |</a></li>
-                <li><a href="#">NEUPATIENT  |</a></li>
-                <li><a href="#">LEISTUNGEN  |</a></li>
-                <li><a href="#">KONTAKT</a></li>
-            </ul>
-            </p>
-        </div>
-    </div>
-    <div class="large-12 columns" >
-        <p align="left" style="font-size:12px">&copy; 2013 zahnarztpraxis Dunker&amp;Partner. All Rights Reserved</p>
-    </div>
-    </div>
-</footer>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.jcarousel.min.js"></script>
-<script type="text/javascript">
-    var jQ=jQuery.noConflict();
-    jQ(document).ready(function(){
-
-    });
-    jQ('#mycarousel').jcarousel();
-</script>
-<!-- Footer -->
-</body>
-
-
-
-</html>
+<?php get_footer(); ?>
