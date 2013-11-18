@@ -27,14 +27,18 @@ get_header();
     <!-- End Header and Nav -->
 
     <!-- First Band (Slider) -->
+    <?php  get_the_ID();
 
+    $images=get_post_meta(get_the_ID(),'wpcf-team-slider');
+
+
+    ?>
     <div class="row">
         <div class="large-12 columns">
             <ul data-orbit>
-                <li><img src="http://placehold.it/1000x400&text=[ img 1 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 2 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 3 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 4 ]" /></li>
+                <?php foreach($images as $img): ?>
+                    <li><img src="<?php echo $img; ?>" /></li>
+                <?php endforeach; ?>
             </ul>
             <!-- <div id="slider">
 
@@ -54,12 +58,14 @@ get_header();
 
 
             <h4>This is a content section.</h4>
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+            <p>
+            <h6><?php echo get_post_meta(get_the_ID(),'wpcf-team-member-name1',true) ?></h6>
+            <?php echo get_post_meta(get_the_ID(),'wpcf-team-member-content1',true) ?></p>
 
         </div>
 
         <div class="large-8 columns" id="teamblock">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/side_img2.png">
+            <img src="<?php echo get_post_meta(get_the_ID(),'wpcf-team-member-image1',true) ?>">
             <!-- <div id="slider">
 
             </div> -->
@@ -70,12 +76,13 @@ get_header();
 
         <div class="large-4 columns" id="imgblock201">
 
-            <p><h6>DR. MICHEAL DUNKER</h6>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+            <h6><?php echo get_post_meta(get_the_ID(),'wpcf-team-member-name2',true) ?></h6>
+            <?php echo get_post_meta(get_the_ID(),'wpcf-team-member-content2',true) ?></p>
 
         </div>
 
         <div class="large-8 columns" id="imgblock202">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/side_img2.png">
+            <img src="<?php echo get_post_meta(get_the_ID(),'wpcf-team-member-image2',true) ?>">
             <!-- <div id="slider">
 
             </div> -->
@@ -86,12 +93,13 @@ get_header();
 
         <div class="large-4 columns" id="imgblock203">
 
-            <p><h6>DR. MICHEAL DUNKER</h6>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+            <h6><?php echo get_post_meta(get_the_ID(),'wpcf-team-member-name3',true) ?></h6>
+            <?php echo get_post_meta(get_the_ID(),'wpcf-team-member-content3',true) ?></p>
 
         </div>
 
         <div class="large-8 columns" id="imgblock204">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/side_img2.png">
+            <img src="<?php echo get_post_meta(get_the_ID(),'wpcf-team-member-image3',true) ?>">
             <!-- <div id="slider">
 
             </div> -->
@@ -103,12 +111,16 @@ get_header();
 
     <div class="row">
         <div class="large-8 columns">
+            <?php
+
+            $images=get_post_meta(get_the_ID(),'wpcf-team-small-slider');
+
+            ?>
             <h5>This is a content section.</h5>
             <ul data-orbit>
-                <li><img src="http://placehold.it/1000x400&text=[ img 1 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 2 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 3 ]" /></li>
-                <li><img src="http://placehold.it/1000x400&text=[ img 4 ]" /></li>
+                <?php foreach($images as $img): ?>
+                    <li><img src="<?php echo $img; ?>" /></li>
+                <?php endforeach; ?>
             </ul>
             <!-- <div id="slider">
 
